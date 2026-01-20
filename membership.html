@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership | LANAB GAME STOP | Premium Gaming Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Bebas Neue', cursive;
+                letter-spacing: 1px;
+            }
+        }
+
+        @layer components {
+            .font-bebas {
+                font-family: 'Bebas Neue', cursive;
+            }
+            .font-poppins {
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            /* Custom glow effect */
+            .glow-text {
+                text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+            }
+            
+            .glow-box {
+                box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+            }
+            
+            /* Animation classes */
+            .fade-in {
+                animation: fadeIn 1s ease-in-out;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            .slide-up {
+                animation: slideUp 0.8s ease-out;
+            }
+            
+            @keyframes slideUp {
+                from { 
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to { 
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            /* Pulse animation for featured card */
+            @keyframes pulse-glow {
+                0%, 100% {
+                    box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+                }
+                50% {
+                    box-shadow: 0 0 30px rgba(34, 211, 238, 0.6);
+                }
+            }
+            
+            .pulse-glow {
+                animation: pulse-glow 2s infinite;
+            }
+            
+            /* Button hover effects */
+            .btn-hover-glow:hover {
+                box-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
+            }
+            
+            /* Custom scrollbar */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            
+            ::-webkit-scrollbar-track {
+                background: #1a202c;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                background: #0ea5e9;
+                border-radius: 4px;
+            }
+            
+            ::-webkit-scrollbar-thumb:hover {
+                background: #38bdf8;
+            }
+            
+            /* Navbar Styles */
+            .navbar-container {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                background: rgba(17, 24, 39, 0.95);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 1rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .nav-logo {
+                font-family: 'Bebas Neue', cursive;
+                font-size: 1.8rem;
+                color: #22d3ee;
+                text-decoration: none;
+                letter-spacing: 2px;
+            }
+            
+            .nav-links {
+                display: flex;
+                gap: 2rem;
+            }
+            
+            .nav-link {
+                color: #e5e7eb;
+                text-decoration: none;
+                font-weight: 600;
+                transition: color 0.3s;
+                position: relative;
+            }
+            
+            .nav-link:hover {
+                color: #22d3ee;
+            }
+            
+            .nav-link.active {
+                color: #22d3ee;
+            }
+            
+            .nav-link.active::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: #22d3ee;
+            }
+            
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: #22d3ee;
+                transition: width 0.3s;
+            }
+            
+            .nav-link:hover::after {
+                width: 100%;
+            }
+            
+            .mobile-menu-btn {
+                display: none;
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+            }
+            
+            .mobile-menu {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+                background: rgba(17, 24, 39, 0.95);
+            }
+            
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                }
+                
+                .mobile-menu-btn {
+                    display: block;
+                }
+                
+                .mobile-menu.active {
+                    display: flex;
+                }
+            }
+            
+            /* Footer Styles */
+            .footer-container {
+                display: block;
+                background: #111827;
+                color: #9ca3af;
+                padding: 3rem 0;
+            }
+            
+            .footer-content-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+            
+            .footer-content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .footer-section h3 {
+                color: #e5e7eb;
+                font-family: 'Bebas Neue', cursive;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                letter-spacing: 1px;
+            }
+            
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .footer-section li {
+                margin-bottom: 0.5rem;
+            }
+            
+            .footer-section a {
+                color: #9ca3af;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+            
+            .footer-section a:hover {
+                color: #22d3ee;
+            }
+            
+            .social-links {
+                display: flex;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            
+            .social-links a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: #1f2937;
+                color: #e5e7eb;
+                transition: all 0.3s;
+            }
+            
+            .social-links a:hover {
+                background: #22d3ee;
+                color: #111827;
+                transform: translateY(-3px);
+            }
+            
+            .footer-bottom {
+                text-align: center;
+                padding-top: 2rem;
+                border-top: 1px solid #1f2937;
+            }
+            
+            @media (max-width: 768px) {
+                .footer-content {
+                    grid-template-columns: 1fr;
+                }
+            }
+            
+            /* Membership Page Specific Styles */
+            .benefit-icon {
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #0ea5e9, #22d3ee);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+            
+            .membership-card {
+                transition: all 0.3s ease;
+                border-radius: 16px;
+                overflow: hidden;
+            }
+            
+            .membership-card:hover {
+                transform: translateY(-10px);
+            }
+            
+            .featured-card {
+                position: relative;
+                z-index: 10;
+            }
+            
+            .featured-badge {
+                position: absolute;
+                top: -12px;
+                right: 20px;
+                background: linear-gradient(135deg, #0ea5e9, #22d3ee);
+                color: white;
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-weight: bold;
+                font-size: 0.875rem;
+                z-index: 20;
+            }
+            
+            .membership-form input,
+            .membership-form select {
+                background: rgba(31, 41, 55, 0.7);
+                border: 1px solid #4b5563;
+                transition: all 0.3s;
+            }
+            
+            .membership-form input:focus,
+            .membership-form select:focus {
+                border-color: #22d3ee;
+                box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+            }
+            
+            .step-indicator {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                background: #374151;
+                color: #9ca3af;
+                transition: all 0.3s;
+            }
+            
+            .step-indicator.active {
+                background: linear-gradient(135deg, #0ea5e9, #22d3ee);
+                color: white;
+            }
+            
+            .step-indicator.completed {
+                background: #10b981;
+                color: white;
+            }
+            
+            .timeline-connector {
+                height: 2px;
+                flex: 1;
+                background: #374151;
+                margin: 0 10px;
+            }
+            
+            .timeline-connector.active {
+                background: linear-gradient(135deg, #0ea5e9, #22d3ee);
+            }
+            
+            .timeline-connector.completed {
+                background: #10b981;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-poppins">
+    <!-- Custom Navbar -->
+    <div class="navbar-container">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">LANAB GAME STOP</a>
+            
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/#games" class="nav-link">Games</a>
+                <a href="/membership" class="nav-link active">Membership</a>
+                <a href="/#gallery" class="nav-link">Gallery</a>
+                <a href="/#visit" class="nav-link">Visit</a>
+                <a href="/#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/#games" class="nav-link">Games</a>
+            <a href="/membership" class="nav-link active">Membership</a>
+            <a href="/#gallery" class="nav-link">Gallery</a>
+            <a href="/#visit" class="nav-link">Visit</a>
+            <a href="/#contact" class="nav-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-20 flex items-center justify-center bg-gradient-to-br from-blue-900 via-gray-900 to-purple-900 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-20"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-gray-900"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-bebas tracking-wider mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                LEVEL UP YOUR GAME
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-cyan-200">Choose Your Tier. Maximize Your Experience.</p>
+            <p class="text-lg max-w-3xl mx-auto text-gray-300 mb-8">
+                Join our elite gaming community and unlock exclusive benefits, premium access, and unforgettable experiences. Whether you're a casual player or aspiring pro, we have a membership tier designed for you.
+            </p>
+            <a href="#membership-tiers" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full font-bold hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 transform hover:scale-105">
+                <span>View Membership Tiers</span>
+                <i data-feather="arrow-down" class="ml-2 w-5 h-5"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Why Join Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bebas mb-4 text-center text-cyan-400">WHY JOIN LANAB GAME STOP?</h2>
+            <p class="text-lg text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+                Experience gaming like never before with our premium membership program designed for every type of gamer.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="benefit-icon mx-auto">
+                        <i data-feather="clock" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Flexible Hours</h3>
+                    <p class="text-gray-300">Access our premium facilities during extended hours, with priority booking for members.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="benefit-icon mx-auto">
+                        <i data-feather="award" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Exclusive Tournaments</h3>
+                    <p class="text-gray-300">Compete in members-only tournaments with cash prizes and exclusive rewards.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="benefit-icon mx-auto">
+                        <i data-feather="users" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Vibrant Community</h3>
+                    <p class="text-gray-300">Connect with fellow gamers, join teams, and participate in community events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Tiers -->
+    <section id="membership-tiers" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bebas mb-4 text-center text-cyan-400">CHOOSE YOUR TIER</h2>
+            <p class="text-lg text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+                Select the membership plan that fits your gaming style and budget. All plans include access to our basic facilities.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Casual Gamer Tier -->
+                <div class="membership-card bg-gray-800 rounded-xl border border-gray-700">
+                    <div class="bg-gray-700 p-8">
+                        <h3 class="text-2xl font-bold text-center">CASUAL GAMER</h3>
+                        <p class="text-center text-gray-300 mt-2">Perfect for weekend warriors</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-4xl font-bold mb-2 text-center">₦5,000<span class="text-lg font-normal text-gray-400">/month</span></div>
+                        <p class="text-center text-gray-400 mb-6">or ₦50,000/year (save ₦10,000)</p>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>20 hours of gaming per month</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Standard PC and Console access</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>5% discount on food & drinks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Basic tournament access</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Monthly newsletter</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="selectTier('casual')" class="w-full py-3 bg-gray-700 hover:bg-cyan-600 text-center rounded-lg font-bold transition-all duration-300">
+                            Select Plan
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Pro Gamer Tier (Featured) -->
+                <div class="membership-card bg-gray-800 rounded-xl border-2 border-cyan-500 transform scale-105 featured-card glow-box">
+                    <div class="featured-badge">MOST POPULAR</div>
+                    <div class="bg-gradient-to-r from-cyan-500 to-blue-500 p-8">
+                        <h3 class="text-2xl font-bold text-center">PRO GAMER</h3>
+                        <p class="text-center text-cyan-100 mt-2">For the serious competitor</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-4xl font-bold mb-2 text-center">₦15,000<span class="text-lg font-normal text-gray-400">/month</span></div>
+                        <p class="text-center text-gray-400 mb-6">or ₦150,000/year (save ₦30,000)</p>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+                                <span><strong>Unlimited gaming hours</strong></span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Priority access to all equipment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+                                <span>15% discount on food & drinks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Free tournament entries</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Access to VR and Racing Sims</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Weekly coaching sessions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Members-only Discord server</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="selectTier('pro')" class="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-center rounded-lg font-bold transition-all duration-300">
+                            Select Plan
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Elite Gamer Tier -->
+                <div class="membership-card bg-gray-800 rounded-xl border border-gray-700">
+                    <div class="bg-gray-700 p-8">
+                        <h3 class="text-2xl font-bold text-center">ELITE GAMER</h3>
+                        <p class="text-center text-gray-300 mt-2">The ultimate gaming experience</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-4xl font-bold mb-2 text-center">₦25,000<span class="text-lg font-normal text-gray-400">/month</span></div>
+                        <p class="text-center text-gray-400 mb-6">or ₦250,000/year (save ₦50,000)</p>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span><strong>All Pro Gamer benefits</strong></span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>VIP priority on all equipment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>25% discount on everything</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Personal gaming locker</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Invitation to exclusive events</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Monthly hardware upgrades</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>One-on-one coaching sessions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Free guest passes (2 per month)</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="selectTier('elite')" class="w-full py-3 bg-gray-700 hover:bg-cyan-600 text-center rounded-lg font-bold transition-all duration-300">
+                            Select Plan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bebas mb-4 text-center text-cyan-400">PLAN COMPARISON</h2>
+            <p class="text-lg text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+                Compare all features across our membership tiers to find your perfect fit.
+            </p>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="py-4 px-4 font-bold text-lg">Features</th>
+                            <th class="py-4 px-4 text-center font-bold">Casual Gamer</th>
+                            <th class="py-4 px-4 text-center font-bold text-cyan-400">Pro Gamer</th>
+                            <th class="py-4 px-4 text-center font-bold">Elite Gamer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-4 px-4">Gaming Hours</td>
+                            <td class="py-4 px-4 text-center">20 hours/month</td>
+                            <td class="py-4 px-4 text-center text-cyan-400 font-bold">Unlimited</td>
+                            <td class="py-4 px-4 text-center text-cyan-400 font-bold">Unlimited</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-4 px-4">Equipment Priority</td>
+                            <td class="py-4 px-4 text-center">Standard</td>
+                            <td class="py-4 px-4 text-center text-cyan-400">Priority</td>
+                            <td class="py-4 px-4 text-center text-cyan-400 font-bold">VIP Priority</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-4 px-4">Discount</td>
+                            <td class="py-4 px-4 text-center">5%</td>
+                            <td class="py-4 px-4 text-center text-cyan-400">15%</td>
+                            <td class="py-4 px-4 text-center text-cyan-400 font-bold">25%</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-4 px-4">Tournament Access</td>
+                            <td class="py-4 px-4 text-center">Basic</td>
+                            <td class="py-4 px-4 text-center text-cyan-400 font-bold">Free Entries</td>
+                            <td class="py-4 px-4 text-center text-cyan-400 font-bold">Free Entries</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-4 px-4">VR & Racing Sims</td>
+                            <td class="py-4 px-4 text-center">-</td>
+                            <td class="py-4 px-4 text-center text-cyan-400">✓</td>
+                            <td class="py-4 px-4 text-center text-cyan-400 font-bold">✓</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-4 px-4">Personal Locker</td>
+                            <td class="py-4 px-4 text-center">-</td>
+                            <td class="py-4 px-4 text-center">-</td>
+                            <td class="py-4 px-4 text-center text-cyan-400 font-bold">✓</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-4 px-4">Coaching Sessions</td>
+                            <td class="py-4 px-4 text-center">-</td>
+                            <td class="py-4 px-4 text-center text-cyan-400">Weekly Group</td>
+                            <td class="py-4 px-4 text-center text-cyan-400 font-bold">One-on-One</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-4 px-4">Guest Passes</td>
+                            <td class="py-4 px-4 text-center">-</td>
+                            <td class="py-4 px-4 text-center">-</td>
+                            <td class="py-4 px-4 text-center text-cyan-400 font-bold">2/month</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4">Monthly Price</td>
+                            <td class="py-4 px-4 text-center">₦5,000</td>
+                            <td class="py-4 px-4 text-center text-cyan-400 font-bold">₦15,000</td>
+                            <td class="py-4 px-4 text-center">₦25,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Form -->
+    <section id="signup-form" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-4xl font-bebas mb-4 text-center text-cyan-400">JOIN THE COMMUNITY</h2>
+            <p class="text-lg text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+                Ready to level up your gaming experience? Fill out the form below to start your membership journey.
+            </p>
+            
+            <!-- Progress Steps -->
+            <div class="flex items-center justify-between mb-12">
+                <div class="flex flex-col items-center">
+                    <div class="step-indicator active" id="step1">1</div>
+                    <span class="mt-2 text-sm">Select Tier</span>
+                </div>
+                <div class="timeline-connector" id="connector1"></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-indicator" id="step2">2</div>
+                    <span class="mt-2 text-sm">Personal Info</span>
+                </div>
+                <div class="timeline-connector" id="connector2"></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-indicator" id="step3">3</div>
+                    <span class="mt-2 text-sm">Payment</span>
+                </div>
+                <div class="timeline-connector" id="connector3"></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-indicator" id="step4">4</div>
+                    <span class="mt-2 text-sm">Confirmation</span>
+                </div>
+            </div>
+            
+            <!-- Membership Form -->
+            <form id="membershipForm" class="membership-form space-y-6 bg-gray-800 p-8 rounded-xl">
+                <!-- Step 1: Tier Selection -->
+                <div id="step1-content" class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Select Your Membership Tier</h3>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="border border-gray-600 rounded-lg p-4 cursor-pointer hover:border-cyan-400 transition-all" onclick="selectTierOption('casual')">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-bold">Casual Gamer</h4>
+                                    <input type="radio" name="tier" value="casual" class="hidden">
+                                    <div class="w-5 h-5 border-2 border-gray-400 rounded-full"></div>
+                                </div>
+                                <p class="text-gray-400 text-sm">₦5,000/month</p>
+                            </div>
+                            <div class="border-2 border-cyan-500 rounded-lg p-4 cursor-pointer bg-gray-700" onclick="selectTierOption('pro')">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-bold text-cyan-400">Pro Gamer</h4>
+                                    <input type="radio" name="tier" value="pro" class="hidden" checked>
+                                    <div class="w-5 h-5 border-2 border-cyan-400 rounded-full flex items-center justify-center">
+                                        <div class="w-3 h-3 bg-cyan-400 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <p class="text-cyan-300 text-sm">₦15,000/month</p>
+                            </div>
+                            <div class="border border-gray-600 rounded-lg p-4 cursor-pointer hover:border-cyan-400 transition-all" onclick="selectTierOption('elite')">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-bold">Elite Gamer</h4>
+                                    <input type="radio" name="tier" value="elite" class="hidden">
+                                    <div class="w-5 h-5 border-2 border-gray-400 rounded-full"></div>
+                                </div>
+                                <p class="text-gray-400 text-sm">₦25,000/month</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-3">Billing Period</h4>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="billing" value="monthly" class="mr-2" checked>
+                                Monthly Billing
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="billing" value="yearly" class="mr-2">
+                                Yearly Billing (Save 16%)
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-4 border-t border-gray-700">
+                        <div id="price-display" class="text-center">
+                            <h4 class="text-lg font-bold">Total: <span class="text-cyan-400">₦15,000/month</span></h4>
+                            <p class="text-gray-400 text-sm">Selected: Pro Gamer - Monthly Billing</p>
+                        </div>
+                    </div>
+                    
+                    <button type="button" onclick="nextStep()" class="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-lg font-bold transition-all duration-300">
+                        Continue to Personal Info
+                    </button>
+                </div>
+                
+                <!-- Step 2: Personal Information -->
+                <div id="step2-content" class="space-y-6 hidden">
+                    <h3 class="text-xl font-bold mb-4">Personal Information</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="firstName" class="block mb-1">First Name *</label>
+                            <input type="text" id="firstName" class="w-full px-4 py-2 rounded" required>
+                        </div>
+                        <div>
+                            <label for="lastName" class="block mb-1">Last Name *</label>
+                            <input type="text" id="lastName" class="w-full px-4 py-2 rounded" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block mb-1">Email Address *</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 rounded" required>
+                    </div>
+                    
+                    <div>
+                        <label for="phone" class="block mb-1">Phone Number *</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-2 rounded" required>
+                    </div>
+                    
+                    <div>
+                        <label for="gamerTag" class="block mb-1">Gamer Tag/Username</label>
+                        <input type="text" id="gamerTag" class="w-full px-4 py-2 rounded" placeholder="Your in-game name">
+                    </div>
+                    
+                    <div>
+                        <label for="preferredGames" class="block mb-1">Preferred Games</label>
+                        <input type="text" id="preferredGames" class="w-full px-4 py-2 rounded" placeholder="e.g., FIFA, Call of Duty, Fortnite">
+                    </div>
+                    
+                    <div class="flex justify-between pt-4 border-t border-gray-700">
+                        <button type="button" onclick="prevStep()" class="px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg font-bold transition-all">
+                            Back
+                        </button>
+                        <button type="button" onclick="nextStep()" class="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-lg font-bold transition-all">
+                            Continue to Payment
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Payment -->
+                <div id="step3-content" class="space-y-6 hidden">
+                    <h3 class="text-xl font-bold mb-4">Payment Information</h3>
+                    
+                    <div>
+                        <label for="cardName" class="block mb-1">Name on Card *</label>
+                        <input type="text" id="cardName" class="w-full px-4 py-2 rounded" required>
+                    </div>
+                    
+                    <div>
+                        <label for="cardNumber" class="block mb-1">Card Number *</label>
+                        <input type="text" id="cardNumber" class="w-full px-4 py-2 rounded" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div>
+                            <label for="expiry" class="block mb-1">Expiry Date *</label>
+                            <input type="text" id="expiry" class="w-full px-4 py-2 rounded" placeholder="MM/YY" required>
+                        </div>
+                        <div>
+                            <label for="cvv" class="block mb-1">CVV *</label>
+                            <input type="text" id="cvv" class="w-full px-4 py-2 rounded" placeholder="123" required>
+                        </div>
+                        <div>
+                            <label class="block mb-1">Card Type</label>
+                            <div class="flex space-x-2 mt-2">
+                                <div class="w-10 h-6 bg-blue-500 rounded"></div>
+                                <div class="w-10 h-6 bg-red-500 rounded"></div>
+                                <div class="w-10 h-6 bg-yellow-500 rounded"></div>
+                                <div class="w-10 h-6 bg-purple-500 rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-4 border-t border-gray-700">
+                        <div id="final-price" class="text-center mb-4">
+                            <h4 class="text-lg font-bold">Total Amount: <span class="text-cyan-400">₦15,000</span></h4>
+                            <p class="text-gray-400 text-sm">Pro Gamer - Monthly Billing</p>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="terms" class="mr-2" required>
+                            <label for="terms" class="text-sm">
+                                I agree to the <a href="#" class="text-cyan-400 hover:underline">Terms of Service</a> and <a href="#" class="text-cyan-400 hover:underline">Privacy Policy</a>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <button type="button" onclick="prevStep()" class="px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg font-bold transition-all">
+                            Back
+                        </button>
+                        <button type="button" onclick="processPayment()" class="px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 rounded-lg font-bold transition-all">
+                            Complete Payment
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Confirmation -->
+                <div id="step4-content" class="space-y-6 hidden text-center">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="check" class="w-10 h-10 text-white"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-cyan-400">Welcome to the Family!</h3>
+                    <p class="text-gray-300">
+                        Your Pro Gamer membership has been successfully activated. You'll receive a confirmation email shortly with your membership details.
+                    </p>
+                    
+                    <div class="bg-gray-700 p-6 rounded-lg max-w-md mx-auto">
+                        <h4 class="font-bold mb-2">What's Next?</h4>
+                        <ul class="text-sm text-gray-300 text-left space-y-2">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="w-4 h-4 mr-2 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Visit us within 7 days to activate your membership card</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="w-4 h-4 mr-2 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Join our Discord server using the link in your email</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="w-4 h-4 mr-2 text-green-400 flex-shrink-0 mt-0.5"></i>
+                                <span>Book your first gaming session through our website or app</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex justify-center space-x-4 pt-4">
+                        <a href="/" class="px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg font-bold transition-all">
+                            Return Home
+                        </a>
+                        <a href="/#games" class="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-lg font-bold transition-all">
+                            Book a Session
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-4xl font-bebas mb-4 text-center text-cyan-400">FREQUENTLY ASKED QUESTIONS</h2>
+            <p class="text-lg text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+                Got questions? We've got answers. Check out our FAQ below.
+            </p>
+            
+            <div class="space-y-4">
+                <div class="bg-gray-700 rounded-lg overflow-hidden">
+                    <button class="w-full p-4 text-left flex justify-between items-center hover:bg-gray-600 transition-all" onclick="toggleFAQ(1)">
+                        <span class="font-bold">Can I upgrade or downgrade my membership?</span>
+                        <i data-feather="chevron-down" class="w-5 h-5"></i>
+                    </button>
+                    <div class="p-4 border-t border-gray-600 hidden" id="faq1">
+                        <p class="text-gray-300">Yes! You can upgrade or downgrade your membership at any time. Changes will be prorated based on your current billing cycle. Contact our support team or visit us in person to make changes.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-700 rounded-lg overflow-hidden">
+                    <button class="w-full p-4 text-left flex justify-between items-center hover:bg-gray-600 transition-all" onclick="toggleFAQ(2)">
+                        <span class="font-bold">What happens to unused gaming hours?</span>
+                        <i data-feather="chevron-down" class="w-5 h-5"></i>
+                    </button>
+                    <div class="p-4 border-t border-gray-600 hidden" id="faq2">
+                        <p class="text-gray-300">For Casual Gamer tier, unused hours do not roll over to the next month. For Pro and Elite tiers with unlimited hours, this is not applicable. We recommend planning your gaming sessions to make the most of your membership.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-700 rounded-lg overflow-hidden">
+                    <button class="w-full p-4 text-left flex justify-between items-center hover:bg-gray-600 transition-all" onclick="toggleFAQ(3)">
+                        <span class="font-bold">Is there a minimum commitment period?</span>
+                        <i data-feather="chevron-down" class="w-5 h-5"></i>
+                    </button>
+                    <div class="p-4 border-t border-gray-600 hidden" id="faq3">
+                        <p class="text-gray-300">No, there's no minimum commitment. All memberships are month-to-month. You can cancel at any time, though we'd be sad to see you go! Annual plans offer savings but can also be cancelled with prorated refund.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-700 rounded-lg overflow-hidden">
+                    <button class="w-full p-4 text-left flex justify-between items-center hover:bg-gray-600 transition-all" onclick="toggleFAQ(4)">
+                        <span class="font-bold">Can I share my membership with friends?</span>
+                        <i data-feather="chevron-down" class="w-5 h-5"></i>
+                    </button>
+                    <div class="p-4 border-t border-gray-600 hidden" id="faq4">
+                        <p class="text-gray-300">Memberships are personal and non-transferable. However, Elite Gamer members receive 2 guest passes per month that can be used to bring friends. All guests must be accompanied by the member and follow our facility rules.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-700 rounded-lg overflow-hidden">
+                    <button class="w-full p-4 text-left flex justify-between items-center hover:bg-gray-600 transition-all" onclick="toggleFAQ(5)">
+                        <span class="font-bold">What payment methods do you accept?</span>
+                        <i data-feather="chevron-down" class="w-5 h-5"></i>
+                    </button>
+                    <div class="p-4 border-t border-gray-600 hidden" id="faq5">
+                        <p class="text-gray-300">We accept all major credit/debit cards (Visa, MasterCard, Verve), bank transfers, and cash payments at our facility. Online payments are processed securely through our payment partners.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-300 mb-4">Still have questions?</p>
+                <a href="/#contact" class="inline-flex items-center px-6 py-3 border-2 border-cyan-400 rounded-full font-bold hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300">
+                    <i data-feather="message-circle" class="mr-2 w-5 h-5"></i>
+                    <span>Contact Our Support Team</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Footer -->
+    <div class="footer-container">
+        <div class="footer-content-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LANAB GAME STOP</h3>
+                    <p>Where gamers are made. Step in, lock in, dominate.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-feather="instagram"></i></a>
+                        <a href="#"><i data-feather="twitter"></i></a>
+                        <a href="#"><i data-feather="facebook"></i></a>
+                        <a href="#"><i data-feather="youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#games">Games & Experiences</a></li>
+                        <li><a href="/membership">Membership</a></li>
+                        <li><a href="/#gallery">Gallery</a></li>
+                        <li><a href="/#visit">Visit Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>First Floor, Above MB Chemical</li>
+                        <li>Abor Junction</li>
+                        <li>hello@lanabgamestop.com</li>
+                        <li>+234 812 345 6789</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Opening Hours</h3>
+                    <ul>
+                        <li>Mon-Fri: 10AM - 10PM</li>
+                        <li>Weekends: 9AM - Midnight</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> LANAB GAME STOP. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Initialize feather icons
+            feather.replace();
+            
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('active');
+                    feather.replace();
+                });
+                
+                // Close mobile menu when clicking a link
+                const mobileLinks = mobileMenu.querySelectorAll('.nav-link');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+            }
+            
+            // Update price display based on selection
+            updatePriceDisplay();
+            
+            // Add scroll animations
+            animateOnScroll();
+        });
+        
+        // Membership form logic
+        let currentStep = 1;
+        const membershipPrices = {
+            casual: { monthly: 5000, yearly: 50000 },
+            pro: { monthly: 15000, yearly: 150000 },
+            elite: { monthly: 25000, yearly: 250000 }
+        };
+        
+        function selectTier(tier) {
+            // Scroll to form
+            document.getElementById('signup-form').scrollIntoView({ behavior: 'smooth' });
+            
+            // Select the tier in form
+            selectTierOption(tier);
+        }
+        
+        function selectTierOption(tier) {
+            // Update radio button
+            document.querySelector(`input[name="tier"][value="${tier}"]`).checked = true;
+            
+            // Update visual selection
+            document.querySelectorAll('[onclick*="selectTierOption"]').forEach(el => {
+                el.classList.remove('border-2', 'border-cyan-500', 'bg-gray-700');
+                el.classList.add('border', 'border-gray-600');
+                el.querySelector('h4').classList.remove('text-cyan-400');
+                el.querySelector('p').classList.remove('text-cyan-300');
+                el.querySelector('p').classList.add('text-gray-400');
+                
+                const radioDiv = el.querySelector('div > div:last-child');
+                radioDiv.classList.remove('border-cyan-400');
+                radioDiv.classList.add('border-gray-400');
+                radioDiv.innerHTML = '<div class="w-5 h-5 border-2 border-gray-400 rounded-full"></div>';
+            });
+            
+            // Highlight selected
+            const selectedEl = document.querySelector(`[onclick="selectTierOption('${tier}')"]`);
+            selectedEl.classList.remove('border', 'border-gray-600');
+            selectedEl.classList.add('border-2', 'border-cyan-500', 'bg-gray-700');
+            selectedEl.querySelector('h4').classList.add('text-cyan-400');
+            selectedEl.querySelector('p').classList.remove('text-gray-400');
+            selectedEl.querySelector('p').classList.add('text-cyan-300');
+            
+            const selectedRadioDiv = selectedEl.querySelector('div > div:last-child');
+            selectedRadioDiv.classList.remove('border-gray-400');
+            selectedRadioDiv.classList.add('border-cyan-400');
+            selectedRadioDiv.innerHTML = '<div class="w-5 h-5 border-2 border-cyan-400 rounded-full flex items-center justify-center"><div class="w-3 h-3 bg-cyan-400 rounded-full"></div></div>';
+            
+            updatePriceDisplay();
+        }
+        
+        function updatePriceDisplay() {
+            const tier = document.querySelector('input[name="tier"]:checked').value;
+            const billing = document.querySelector('input[name="billing"]:checked').value;
+            const price = membershipPrices[tier][billing];
+            const period = billing === 'monthly' ? '/month' : '/year';
+            
+            // Update price display
+            const priceDisplay = document.getElementById('price-display');
+            priceDisplay.innerHTML = `
+                <h4 class="text-lg font-bold">Total: <span class="text-cyan-400">₦${price.toLocaleString()}${period}</span></h4>
+                <p class="text-gray-400 text-sm">Selected: ${tier.charAt(0).toUpperCase() + tier.slice(1)} Gamer - ${billing.charAt(0).toUpperCase() + billing.slice(1)} Billing</p>
+            `;
+            
+            // Update final price
+            const finalPrice = document.getElementById('final-price');
+            if (finalPrice) {
+                finalPrice.innerHTML = `
+                    <h4 class="text-lg font-bold">Total Amount: <span class="text-cyan-400">₦${price.toLocaleString()}</span></h4>
+                    <p class="text-gray-400 text-sm">${tier.charAt(0).toUpperCase() + tier.slice(1)} Gamer - ${billing.charAt(0).toUpperCase() + billing.slice(1)} Billing</p>
+                `;
+            }
+        }
+        
+        function nextStep() {
+            // Validate current step
+            if (currentStep === 2) {
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                
+                if (!firstName || !lastName || !email || !phone) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                if (!validateEmail(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+            }
+            
+            if (currentStep === 3) {
+                const cardName = document.getElementById('cardName').value;
+                const cardNumber = document.getElementById('cardNumber').value;
+                const expiry = document.getElementById('expiry').value;
+                const cvv = document.getElementById('cvv').value;
+                const terms = document.getElementById('terms').checked;
+                
+                if (!cardName || !cardNumber || !expiry || !cvv) {
+                    alert('Please fill in all payment fields.');
+                    return;
+                }
+                
+                if (!terms) {
+                    alert('You must agree to the terms and conditions.');
+                    return;
+                }
+            }
+            
+            // Hide current step
+            document.getElementById(`step${currentStep}-content`).classList.add('hidden');
+            
+            // Update step indicator
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+            document.getElementById(`step${currentStep}`).classList.add('completed');
+            
+            if (currentStep < 4) {
+                document.getElementById(`connector${currentStep}`).classList.add('completed');
+            }
+            
+            // Show next step
+            currentStep++;
+            document.getElementById(`step${currentStep}`).classList.add('active');
+            
+            if (currentStep < 4) {
+                document.getElementById(`connector${currentStep}`).classList.add('active');
+            }
+            
+            document.getElementById(`step${currentStep}-content`).classList.remove('hidden');
+            
+            // If this is step 3, update final price
+            if (currentStep === 3) {
+                updatePriceDisplay();
+            }
+            
+            // Scroll to top of form
+            document.getElementById('membershipForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        function prevStep() {
+            // Hide current step
+            document.getElementById(`step${currentStep}-content`).classList.add('hidden');
+            
+            // Update step indicator
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+            
+            if (currentStep > 1) {
+                document.getElementById(`connector${currentStep-1}`).classList.remove('active');
+                document.getElementById(`connector${currentStep-1}`).classList.remove('completed');
+            }
+            
+            // Show previous step
+            currentStep--;
+            document.getElementById(`step${currentStep}`).classList.add('active');
+            document.getElementById(`step${currentStep}-content`).classList.remove('hidden');
+            
+            // Scroll to top of form
+            document.getElementById('membershipForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        function processPayment() {
+            // Simulate payment processing
+            document.getElementById('step3-content').classList.add('hidden');
+            document.getElementById('step3').classList.remove('active');
+            document.getElementById('step3').classList.add('completed');
+            document.getElementById('connector3').classList.add('completed');
+            
+            currentStep = 4;
+            document.getElementById('step4').classList.add('active');
+            document.getElementById('step4-content').classList.remove('hidden');
+            
+            // Update confirmation message based on selected tier
+            const tier = document.querySelector('input[name="tier"]:checked').value;
+            const tierName = tier.charAt(0).toUpperCase() + tier.slice(1) + ' Gamer';
+            document.querySelector('#step4-content h3').textContent = `Welcome to the ${tierName} Tier!`;
+            document.querySelector('#step4-content p').textContent = `Your ${tierName} membership has been successfully activated. You'll receive a confirmation email shortly with your membership details.`;
+            
+            // Scroll to top of form
+            document.getElementById('membershipForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        function toggleFAQ(id) {
+            const faqContent = document.getElementById(`faq${id}`);
+            const button = faqContent.previousElementSibling;
+            const icon = button.querySelector('i');
+            
+            faqContent.classList.toggle('hidden');
+            
+            if (faqContent.classList.contains('hidden')) {
+                icon.setAttribute('data-feather', 'chevron-down');
+            } else {
+                icon.setAttribute('data-feather', 'chevron-up');
+            }
+            feather.replace();
+        }
+        
+        // Listen to billing changes
+        document.querySelectorAll('input[name="billing"]').forEach(radio => {
+            radio.addEventListener('change', updatePriceDisplay);
+        });
+        
+        // Intersection Observer for scroll animations
+        function animateOnScroll() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.membership-card, .benefit-icon').forEach(el => {
+                observer.observe(el);
+            });
+        }
+    </script>
+</body>
+</html>
