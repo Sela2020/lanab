@@ -2,740 +2,586 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     
     <!-- SEO Meta Tags -->
-    <title>LANAB GAME STOP | Premium Gaming Hub in Ghana</title>
-    <meta name="description" content="LANAB GAME STOP - Ghana's premier gaming hub with PS5, VR, racing simulators, and esports tournaments. Join our elite gaming community in Abor Junction.">
-    <meta name="keywords" content="gaming hub Ghana, esports Ghana, PS5 gaming, VR experience, gaming cafe, esports tournaments, gaming community Ghana">
+    <title>LANAB GAME STOP | Premium Gaming Hub in Abor, Ghana</title>
+    <meta name="description" content="LANAB GAME STOP - Abor's premier gaming hub with PS5, VR, racing simulators, and esports tournaments. Join Ghana's fastest growing gaming community.">
+    <meta name="keywords" content="gaming hub Ghana, esports Ghana, PS5 gaming Abor, VR experience, gaming cafe Abor, gaming in Volta Region">
     <meta name="author" content="LANAB GAME STOP">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourgithubusername.github.io/">
-    <meta property="og:title" content="LANAB GAME STOP | Premium Gaming Hub">
-    <meta property="og:description" content="Step In. Lock In. Dominate. Ghana's premier gaming destination.">
-    <meta property="og:image" content="https://yourgithubusername.github.io/images/lanab-logo.png">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yourgithubusername.github.io/">
-    <meta property="twitter:title" content="LANAB GAME STOP | Premium Gaming Hub">
-    <meta property="twitter:description" content="Step In. Lock In. Dominate. Ghana's premier gaming destination.">
-    <meta property="twitter:image" content="https://yourgithubusername.github.io/images/lanab-logo.png">
-    
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="images/site.webmanifest">
-    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#0ea5e9">
-    <meta name="msapplication-TileColor" content="#0ea5e9">
-    <meta name="theme-color" content="#111827">
+    <link rel="icon" href="lanab-logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="lanab-logo.png">
     
     <!-- External Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* Custom CSS */
-        @layer base {
-            html {
-                scroll-behavior: smooth;
-            }
-            body {
-                font-family: 'Poppins', sans-serif;
-            }
-            h1, h2, h3, h4, h5, h6 {
-                font-family: 'Bebas Neue', cursive;
-                letter-spacing: 1px;
-            }
-        }
-
-        @layer components {
-            .font-bebas {
-                font-family: 'Bebas Neue', cursive;
-            }
-            .font-poppins {
-                font-family: 'Poppins', sans-serif;
-            }
-            
-            /* Custom glow effect */
-            .glow-text {
-                text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
-            }
-            
-            .glow-box {
-                box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
-            }
-            
-            /* Animation classes */
-            .fade-in {
-                animation: fadeIn 1s ease-in-out;
-            }
-            
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            
-            .slide-up {
-                animation: slideUp 0.8s ease-out;
-            }
-            
-            @keyframes slideUp {
-                from { 
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to { 
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            
-            /* TikTok specific */
-            .tiktok-embed {
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            }
-            
-            /* Button hover effects */
-            .btn-hover-glow:hover {
-                box-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
-            }
-            
-            /* Custom scrollbar */
-            ::-webkit-scrollbar {
-                width: 8px;
-            }
-            
-            ::-webkit-scrollbar-track {
-                background: #1a202c;
-            }
-            
-            ::-webkit-scrollbar-thumb {
-                background: #0ea5e9;
-                border-radius: 4px;
-            }
-            
-            ::-webkit-scrollbar-thumb:hover {
-                background: #38bdf8;
-            }
-        }
-        
-        /* Navbar Styles */
-        .navbar-container {
-            display: block;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(17, 24, 39, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .nav-logo-img {
-            height: 50px;
-            width: auto;
-            border-radius: 8px;
-        }
-        
-        .nav-logo-text {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.8rem;
-            color: #22d3ee;
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-link {
-            color: #e5e7eb;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-        
-        .nav-link:hover {
-            color: #22d3ee;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #22d3ee;
-            transition: width 0.3s;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-        
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            gap: 1rem;
-            padding: 1rem;
-            background: rgba(17, 24, 39, 0.95);
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .mobile-menu.active {
-                display: flex;
-            }
-            
-            .nav-container {
-                padding: 0.5rem 1rem;
-            }
-        }
-        
-        /* Footer Styles */
-        .footer-container {
-            display: block;
+        body {
+            font-family: 'Poppins', sans-serif;
             background: #111827;
-            color: #9ca3af;
-            padding: 3rem 0;
+            color: white;
         }
         
-        .footer-content-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h3 {
-            color: #e5e7eb;
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Bebas Neue', cursive;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
             letter-spacing: 1px;
         }
         
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
+        html {
+            scroll-behavior: smooth;
         }
         
-        .footer-section li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-section a {
-            color: #9ca3af;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: #22d3ee;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #1f2937;
-            color: #e5e7eb;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            transform: translateY(-3px);
-        }
-        
-        .social-links a.instagram:hover {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-        }
-        
-        .social-links a.twitter:hover {
-            background: #1DA1F2;
-        }
-        
-        .social-links a.facebook:hover {
-            background: #1877F2;
-        }
-        
-        .social-links a.youtube:hover {
-            background: #FF0000;
-        }
-        
-        .social-links a.tiktok:hover {
-            background: #000000;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #1f2937;
-            font-size: 0.875rem;
-        }
-        
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content-container {
-                padding: 0 1rem;
-            }
-        }
-        
-        /* TikTok Feed Section */
-        .tiktok-feed-container {
-            background: linear-gradient(135deg, #000000 0%, #111827 100%);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .tiktok-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .tiktok-icon {
-            color: #000000;
-            background: white;
-            border-radius: 8px;
-            padding: 4px;
-        }
-        
-        /* Membership Cards */
-        .membership-card {
+        /* Navbar */
+        .navbar-container {
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
             transition: all 0.3s ease;
-            border-radius: 12px;
-            overflow: hidden;
         }
         
-        .membership-card:hover {
-            transform: translateY(-5px);
+        .navbar-scrolled {
+            background: rgba(17, 24, 39, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px) scale(1.1);
+            animation: none;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .animate-fade-in-left {
+            animation: fadeInLeft 1s ease-out;
+        }
+        
+        .animate-fade-in-right {
+            animation: fadeInRight 1s ease-out;
+        }
+        
+        /* Section Styling */
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Cards */
+        .card {
+            transition: all 0.4s ease;
+            transform: translateY(0);
+            opacity: 0;
+        }
+        
+        .card.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
         
-        .featured-card {
+        /* Hero Background */
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             position: relative;
-            z-index: 10;
+            overflow: hidden;
         }
         
-        /* Form Styles */
-        .contact-form input,
-        .contact-form textarea {
-            background: rgba(31, 41, 55, 0.7);
-            border: 1px solid #4b5563;
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            z-index: 1;
+        }
+        
+        /* Manager Image Placeholder */
+        .manager-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #22d3ee;
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+        }
+        
+        /* Booking Button */
+        .booking-btn {
+            background: linear-gradient(135deg, #22d3ee, #0ea5e9);
             transition: all 0.3s;
         }
         
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: #22d3ee;
-            box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
-            outline: none;
+        .booking-btn:hover {
+            background: linear-gradient(135deg, #0ea5e9, #22d3ee);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #111827;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(34, 211, 238, 0.2);
+            border-top-color: #22d3ee;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white font-poppins">
-    <!-- Custom Navbar -->
-    <div class="navbar-container">
-        <div class="nav-container">
-            <div class="logo-container">
-                <!-- Replace with your actual logo image -->
-                <img src="lanab-logo.png" alt="LANAB GAME STOP Logo" class="nav-logo-img">
-                <a href="/" class="nav-logo-text">LANAB GAME STOP</a>
-            </div>
-            
-            <div class="nav-links">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#games" class="nav-link">Games</a>
-                <a href="membership.html" class="nav-link">Membership</a>
-                <a href="#gallery" class="nav-link">Gallery</a>
-                <a href="#tiktok-feed" class="nav-link">TikTok</a>
-                <a href="#visit" class="nav-link">Visit</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                <i data-feather="menu"></i>
-            </button>
-        </div>
-        
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#games" class="nav-link">Games</a>
-            <a href="membership.html" class="nav-link">Membership</a>
-            <a href="#gallery" class="nav-link">Gallery</a>
-            <a href="#tiktok-feed" class="nav-link">TikTok</a>
-            <a href="#visit" class="nav-link">Visit</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </div>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
     </div>
 
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/233245332299?text=Hello%20LANAB%20GAME%20STOP!%20I%20want%20to%20know%20more%20about%20your%20gaming%20services" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 whatsapp-btn w-16 h-16 rounded-full flex items-center justify-center shadow-2xl">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Navbar -->
+    <nav class="navbar-container py-3" id="navbar">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 animate-fade-in-left">
+                    <img src="lanab-logo.png" alt="LANAB GAME STOP Logo" class="h-10 rounded">
+                    <a href="#home" class="text-2xl font-bold text-cyan-400">LANAB GAME STOP</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#home" class="text-gray-300 hover:text-cyan-400 transition-colors">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-cyan-400 transition-colors">About</a>
+                    <a href="#games" class="text-gray-300 hover:text-cyan-400 transition-colors">Games</a>
+                    <a href="#membership" class="text-gray-300 hover:text-cyan-400 transition-colors">Membership</a>
+                    <a href="#visit" class="text-gray-300 hover:text-cyan-400 transition-colors">Visit</a>
+                    <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-white animate-fade-in-right">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu flex-col gap-4 mt-4 pb-4">
+                <a href="#home" class="text-gray-300 hover:text-cyan-400 py-2 transition-colors">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-cyan-400 py-2 transition-colors">About</a>
+                <a href="#games" class="text-gray-300 hover:text-cyan-400 py-2 transition-colors">Games</a>
+                <a href="#membership" class="text-gray-300 hover:text-cyan-400 py-2 transition-colors">Membership</a>
+                <a href="#visit" class="text-gray-300 hover:text-cyan-400 py-2 transition-colors">Visit</a>
+                <a href="#contact" class="text-gray-300 hover:text-cyan-400 py-2 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-gray-900 to-purple-900 overflow-hidden pt-16">
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-gray-900"></div>
+    <section id="home" class="min-h-screen flex items-center justify-center hero-bg pt-16">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="animate-fade-in-up">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                    THIS IS WHERE GAMERS ARE MADE
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-cyan-200">Step In. Lock In. Dominate.</p>
+                <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                    Abor's premier gaming destination. Experience cutting-edge technology, competitive tournaments, and a vibrant gaming community.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="#visit" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full font-bold hover:shadow-lg hover:shadow-cyan-500/30 transition-all transform hover:scale-105">
+                        Visit Us Today
+                    </a>
+                    <a href="https://wa.me/233245332299" target="_blank" class="px-8 py-3 border-2 border-cyan-400 rounded-full font-bold hover:bg-cyan-400 hover:text-gray-900 transition-all transform hover:scale-105">
+                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp Us
+                    </a>
+                </div>
+            </div>
         </div>
         
-        <div class="container mx-auto px-4 sm:px-6 z-10 text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bebas tracking-wider mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                THIS IS WHERE GAMERS ARE MADE
-            </h1>
-            <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 text-cyan-200">Step In. Lock In. Dominate.</p>
-            <p class="text-base sm:text-lg md:text-xl mb-10 max-w-3xl mx-auto text-gray-300">
-                Ghana's premier gaming destination featuring state-of-the-art equipment, competitive tournaments, and an unbeatable community vibe.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="membership.html" class="px-6 sm:px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full font-bold hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
-                    <i data-feather="award" class="w-5 h-5"></i>
-                    <span>Become a Member</span>
-                </a>
-                <a href="https://www.google.com/maps/dir//3V86%2B5HF+MB+Chemical+Shop,+Abor/@6.0650128,0.8622473,792m/data=!3m1!1e3!4m17!1m7!3m6!1s0x1021158717dd3825:0xfff985a767ac11e9!2sMB+Chemical+Shop!8m2!3d6.0654426!4d0.8614307!16s%2Fg%2F11dymv4cm9!4m8!1m0!1m5!1m1!1s0x1021158717dd3825:0xfff985a767ac11e9!2m2!1d0.8614285!2d6.0654383!3e0?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="px-6 sm:px-8 py-3 border-2 border-cyan-400 rounded-full font-bold hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 flex items-center justify-center gap-2">
-                    <i data-feather="map-pin" class="w-5 h-5"></i>
-                    <span>Visit Us</span>
-                </a>
-            </div>
+        <!-- Animated Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
+            <div class="absolute top-3/4 left-1/2 w-48 h-48 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-2000"></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 sm:py-20 bg-gray-800">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bebas mb-8 sm:mb-12 text-center text-cyan-400">ABOUT LANAB GAME STOP</h2>
-            <p class="text-base sm:text-lg md:text-xl text-center text-gray-300 mb-10 sm:mb-12 max-w-4xl mx-auto">
-                We're not just a gaming center - we're a community of passionate gamers, cutting-edge technology enthusiasts, and competitive spirits. Our mission is to provide Ghana's ultimate gaming experience.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                <div class="bg-gray-700 p-6 rounded-lg hover:shadow-lg hover:shadow-cyan-500/20 transition-all fade-in">
-                    <div class="text-cyan-400 mb-4">
-                        <i data-feather="award" class="w-12 h-12"></i>
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl text-center text-cyan-400 mb-12 animate-fade-in-up">ABOUT US</h2>
+            
+            <!-- Game Manager Profile -->
+            <div class="max-w-4xl mx-auto bg-gray-700 rounded-2xl p-8 mb-12 card animate-fade-in-left">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <!-- Manager Image Placeholder -->
+                    <div class="relative">
+                        <img src="poppy.jpeg" 
+                             alt="Game Manager" 
+                             class="manager-img">
+                        <div class="absolute -bottom-2 -right-2 bg-cyan-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            Manager
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Elite Gaming Culture</h3>
-                    <p class="text-gray-300">We've built a community where passion meets performance. From casual players to esports professionals, we cater to all levels.</p>
+                    
+                    <div class="flex-1">
+                        <h3 class="text-2xl mb-2">Meet Our Game Manager</h3>
+                        <p class="text-gray-300 mb-4">
+                            Dedicated to creating the best gaming experience in Abor. Passionate about gaming, technology, and building a strong gaming community.
+                        </p>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2 text-cyan-400">
+                                <i data-feather="clock" class="w-4 h-4"></i>
+                                <span>Available: 10AM - 10PM Daily</span>
+                            </div>
+                            
+                            <div class="flex items-center gap-2 text-cyan-400">
+                                <i data-feather="phone" class="w-4 h-4"></i>
+                                <span>Direct Line: <a href="tel:+233534414615" class="hover:text-cyan-300">+233 53 441 4615</a></span>
+                            </div>
+                            
+                            <!-- Booking Button -->
+                            <div class="pt-4">
+                                <a href="https://wa.me/233245332299?text=Hello%20LANAB%20GAME%20STOP!%20I%20want%20to%20book%20a%20gaming%20session%20with%20the%20manager." 
+                                   target="_blank"
+                                   class="inline-flex items-center gap-2 px-6 py-3 booking-btn rounded-lg font-bold transition-all">
+                                    <i data-feather="calendar" class="w-5 h-5"></i>
+                                    Book Session with Manager
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-gray-700 p-6 rounded-lg hover:shadow-lg hover:shadow-cyan-500/20 transition-all fade-in">
-                    <div class="text-cyan-400 mb-4">
-                        <i data-feather="cpu" class="w-12 h-12"></i>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-8 rounded-xl card animate-fade-in-up">
+                    <div class="text-cyan-400 mb-6">
+                        <i data-feather="cpu" class="w-16 h-16"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Cutting-Edge Technology</h3>
-                    <p class="text-gray-300">PS5, VR headsets, racing simulators with force feedback, and high-performance gaming PCs. We invest in the best hardware.</p>
+                    <h3 class="text-2xl font-bold mb-4">Latest Technology</h3>
+                    <p class="text-gray-300">PS5, high-end gaming PCs, VR headsets, and racing simulators with the latest games.</p>
                 </div>
-                <div class="bg-gray-700 p-6 rounded-lg hover:shadow-lg hover:shadow-cyan-500/20 transition-all fade-in">
-                    <div class="text-cyan-400 mb-4">
-                        <i data-feather="users" class="w-12 h-12"></i>
+                
+                <div class="bg-gray-700 p-8 rounded-xl card animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="text-cyan-400 mb-6">
+                        <i data-feather="users" class="w-16 h-16"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Community First</h3>
-                    <p class="text-gray-300">Weekly tournaments, community events, and networking opportunities. Be part of Ghana's fastest-growing gaming community.</p>
+                    <h3 class="text-2xl font-bold mb-4">Community First</h3>
+                    <p class="text-gray-300">Weekly tournaments, gaming events, and a friendly environment for all gamers.</p>
+                </div>
+                
+                <div class="bg-gray-700 p-8 rounded-xl card animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="text-cyan-400 mb-6">
+                        <i data-feather="award" class="w-16 h-16"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Competitive Gaming</h3>
+                    <p class="text-gray-300">Regular esports tournaments with exciting prizes and local recognition.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Games Section -->
-    <section id="games" class="py-16 sm:py-20 bg-gray-900">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bebas mb-8 sm:mb-12 text-center text-cyan-400">GAMES & EXPERIENCES</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="relative group overflow-hidden rounded-lg h-64 fade-in">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center group-hover:scale-110 transition-all duration-500"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
-                    <div class="relative h-full flex flex-col justify-end p-6">
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2">Console Gaming</h3>
-                        <p class="text-gray-300 text-sm sm:text-base">Latest PS5 & Xbox Series X titles</p>
+    <section id="games" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl text-center text-cyan-400 mb-12 animate-fade-in-up">OUR GAMES</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="relative h-80 rounded-xl overflow-hidden group card animate-fade-in-left">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10"></div>
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center group-hover:scale-110 transition-all duration-700"></div>
+                    <div class="relative z-20 h-full flex flex-col justify-end p-8">
+                        <h3 class="text-3xl font-bold mb-3">PS5 Gaming</h3>
+                        <p class="text-gray-300">Latest console games</p>
                     </div>
                 </div>
-                <div class="relative group overflow-hidden rounded-lg h-64 fade-in">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center group-hover:scale-110 transition-all duration-500"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
-                    <div class="relative h-full flex flex-col justify-end p-6">
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2">VR Experience</h3>
-                        <p class="text-gray-300 text-sm sm:text-base">Immerse yourself completely</p>
+                
+                <div class="relative h-80 rounded-xl overflow-hidden group card animate-fade-in-up">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10"></div>
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center group-hover:scale-110 transition-all duration-700"></div>
+                    <div class="relative z-20 h-full flex flex-col justify-end p-8">
+                        <h3 class="text-3xl font-bold mb-3">VR Experience</h3>
+                        <p class="text-gray-300">Virtual reality games</p>
                     </div>
                 </div>
-                <div class="relative group overflow-hidden rounded-lg h-64 fade-in">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600861194942-f883de0dfe96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center group-hover:scale-110 transition-all duration-500"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
-                    <div class="relative h-full flex flex-col justify-end p-6">
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2">Racing Simulator</h3>
-                        <p class="text-gray-300 text-sm sm:text-base">Feel every turn and drift</p>
+                
+                <div class="relative h-80 rounded-xl overflow-hidden group card animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10"></div>
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600861194942-f883de0dfe96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center group-hover:scale-110 transition-all duration-700"></div>
+                    <div class="relative z-20 h-full flex flex-col justify-end p-8">
+                        <h3 class="text-3xl font-bold mb-3">Racing Simulator</h3>
+                        <p class="text-gray-300">Realistic driving experience</p>
                     </div>
                 </div>
-                <div class="relative group overflow-hidden rounded-lg h-64 fade-in">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center group-hover:scale-110 transition-all duration-500"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
-                    <div class="relative h-full flex flex-col justify-end p-6">
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2">Esports Arena</h3>
-                        <p class="text-gray-300 text-sm sm:text-base">Compete in professional tournaments</p>
+                
+                <div class="relative h-80 rounded-xl overflow-hidden group card animate-fade-in-right">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10"></div>
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center group-hover:scale-110 transition-all duration-700"></div>
+                    <div class="relative z-20 h-full flex flex-col justify-end p-8">
+                        <h3 class="text-3xl font-bold mb-3">Multiplayer Games</h3>
+                        <p class="text-gray-300">Play with friends</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Membership Preview Section -->
-    <section id="membership" class="py-16 sm:py-20 bg-gray-800">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bebas mb-8 sm:mb-12 text-center text-cyan-400">LEVEL UP YOUR GAME</h2>
-            <p class="text-base sm:text-lg md:text-xl text-center text-gray-300 mb-10 sm:mb-12 max-w-3xl mx-auto">
-                Choose from our premium membership tiers designed for every type of gamer. Exclusive benefits, priority access, and unbeatable value.
+    <!-- Membership Section -->
+    <section id="membership" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl text-center text-cyan-400 mb-12 animate-fade-in-up">MEMBERSHIP OPTIONS</h2>
+            <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto animate-fade-in-up">
+                Simple, affordable plans for every gamer in Abor. Choose what works for you.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-                <!-- Casual Gamer -->
-                <div class="membership-card bg-gray-700 rounded-xl border border-gray-600 hover:border-cyan-400 transition-all">
-                    <div class="bg-gray-600 p-6">
-                        <h3 class="text-2xl font-bold text-center">CASUAL GAMER</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-3xl sm:text-4xl font-bold mb-4 text-center">₵200<span class="text-sm sm:text-base font-normal text-gray-400">/month</span></div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0 mt-1"></i><span>20 hours of gaming per month</span></li>
-                            <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0 mt-1"></i><span>Standard equipment access</span></li>
-                            <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0 mt-1"></i><span>5% discount on snacks & drinks</span></li>
-                        </ul>
-                        <a href="membership.html" class="block w-full py-3 bg-gray-600 hover:bg-cyan-500 text-center rounded-lg font-bold transition-all">
-                            View Details
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Pro Gamer (Featured) -->
-                <div class="membership-card bg-gray-700 rounded-xl border-2 border-cyan-500 transform scale-105 z-10 shadow-lg shadow-cyan-500/20 featured-card">
-                    <div class="bg-gradient-to-r from-cyan-500 to-blue-500 p-6">
-                        <h3 class="text-2xl font-bold text-center">PRO GAMER</h3>
-                        <p class="text-center text-cyan-100 mt-2 text-sm">Most Popular</p>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-3xl sm:text-4xl font-bold mb-4 text-center">₵500<span class="text-sm sm:text-base font-normal text-gray-400">/month</span></div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0 mt-1"></i><span><strong>Unlimited gaming hours</strong></span></li>
-                            <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0 mt-1"></i><span>Priority equipment access</span></li>
-                            <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0 mt-1"></i><span>15% discount on everything</span></li>
-                            <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0 mt-1"></i><span>Free tournament entries</span></li>
-                        </ul>
-                        <a href="membership.html" class="block w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-center rounded-lg font-bold transition-all">
-                            Join Now
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Elite Gamer -->
-                <div class="membership-card bg-gray-700 rounded-xl border border-gray-600 hover:border-cyan-400 transition-all">
-                    <div class="bg-gray-600 p-6">
-                        <h3 class="text-2xl font-bold text-center">ELITE GAMER</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-3xl sm:text-4xl font-bold mb-4 text-center">₵800<span class="text-sm sm:text-base font-normal text-gray-400">/month</span></div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0 mt-1"></i><span><strong>All Pro benefits</strong></span></li>
-                            <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0 mt-1"></i><span>VIP equipment priority</span></li>
-                            <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0 mt-1"></i><span>25% discount on everything</span></li>
-                            <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0 mt-1"></i><span>Personal gaming locker</span></li>
-                        </ul>
-                        <a href="membership.html" class="block w-full py-3 bg-gray-600 hover:bg-cyan-500 text-center rounded-lg font-bold transition-all">
-                            View Details
-                        </a>
-                    </div>
-                </div>
-            </div>
             
-            <div class="text-center mt-10 sm:mt-12">
-                <a href="membership.html" class="inline-flex items-center px-6 sm:px-8 py-3 border-2 border-cyan-400 rounded-full font-bold hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300">
-                    <span>View All Membership Options</span>
-                    <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-16 sm:py-20 bg-gray-900">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bebas mb-8 sm:mb-12 text-center text-cyan-400">GAMING IN ACTION</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-                <div class="aspect-square bg-gray-800 rounded-lg overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gaming setup" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                </div>
-                <div class="aspect-square bg-gray-800 rounded-lg overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="VR gaming" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                </div>
-                <div class="aspect-square bg-gray-800 rounded-lg overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Racing simulator" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                </div>
-                <div class="aspect-square bg-gray-800 rounded-lg overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Multiplayer battle" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                </div>
-                <div class="aspect-square bg-gray-800 rounded-lg overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gaming tournament" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                </div>
-                <div class="aspect-square bg-gray-800 rounded-lg overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Console gaming" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                </div>
-                <div class="aspect-square bg-gray-800 rounded-lg overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gaming community" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                </div>
-                <div class="aspect-square bg-gray-800 rounded-lg overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Esports competition" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TikTok Feed Section -->
-    <section id="tiktok-feed" class="py-16 sm:py-20 bg-gray-800">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="tiktok-header">
-                <i data-feather="video" class="w-8 h-8 tiktok-icon"></i>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bebas text-white">LATEST FROM TIKTOK</h2>
-            </div>
-            
-            <div class="tiktok-feed-container">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- TikTok Video 1 -->
-                    <div class="tiktok-embed">
-                        <iframe 
-                            src="https://www.tiktok.com/embed/7328995678991584518" 
-                            height="600" 
-                            frameborder="0" 
-                            allowfullscreen
-                            title="TikTok Video 1"
-                            loading="lazy">
-                        </iframe>
-                    </div>
-                    
-                    <!-- TikTok Video 2 -->
-                    <div class="tiktok-embed">
-                        <iframe 
-                            src="https://www.tiktok.com/embed/7328995678991584518" 
-                            height="600" 
-                            frameborder="0" 
-                            allowfullscreen
-                            title="TikTok Video 2"
-                            loading="lazy">
-                        </iframe>
-                    </div>
-                    
-                    <!-- TikTok Video 3 -->
-                    <div class="tiktok-embed">
-                        <iframe 
-                            src="https://www.tiktok.com/embed/7328995678991584518" 
-                            height="600" 
-                            frameborder="0" 
-                            allowfullscreen
-                            title="TikTok Video 3"
-                            loading="lazy">
-                        </iframe>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-8">
-                    <a href="https://www.tiktok.com/@lanabgamestop?is_from_webapp=1&sender_device=pc" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="inline-flex items-center px-6 py-3 bg-black text-white rounded-full font-bold hover:bg-gray-800 transition-all duration-300">
-                        <i data-feather="external-link" class="mr-2 w-5 h-5"></i>
-                        <span>Follow us on TikTok</span>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Pay Per Hour -->
+                <div class="bg-gray-700 rounded-2xl p-8 card animate-fade-in-left">
+                    <h3 class="text-2xl text-center mb-6">PAY PER HOUR</h3>
+                    <div class="text-5xl font-bold text-center mb-8">₵5<span class="text-xl text-gray-400">/hour</span></div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>
+                            <span>Flexible timing</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>
+                            <span>All equipment available</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>
+                            <span>No commitment</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/233245332299?text=I%20want%20to%20play%20Pay%20Per%20Hour%20at%20LANAB%20GAME%20STOP" 
+                       target="_blank"
+                       class="block w-full py-4 bg-gray-600 hover:bg-cyan-600 rounded-xl text-center font-bold transition-all">
+                        Book Now
                     </a>
                 </div>
+                
+                <!-- Monthly Plan -->
+                <div class="bg-gray-700 rounded-2xl p-8 card border-2 border-cyan-500 transform scale-105 animate-fade-in-up">
+                    <div class="text-center mb-6">
+                        <span class="bg-cyan-500 text-white px-4 py-2 rounded-full text-sm font-bold">MOST POPULAR</span>
+                    </div>
+                    <h3 class="text-2xl text-center mb-6">MONTHLY PLAN</h3>
+                    <div class="text-5xl font-bold text-center mb-8">₵300<span class="text-xl text-gray-400">/month</span></div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>
+                            <span>Unlimited gaming hours</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>
+                            <span>Priority access to equipment</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>
+                            <span>Free tournament entries</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>
+                            <span>10% discount on snacks</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/233245332299?text=I%20want%20to%20sign%20up%20for%20the%20Monthly%20Plan%20at%20LANAB%20GAME%20STOP" 
+                       target="_blank"
+                       class="block w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-xl text-center font-bold transition-all">
+                        Join Now
+                    </a>
+                </div>
+                
+                <!-- VIP Plan -->
+                <div class="bg-gray-700 rounded-2xl p-8 card animate-fade-in-right">
+                    <h3 class="text-2xl text-center mb-6">VIP PLAN</h3>
+                    <div class="text-5xl font-bold text-center mb-8">₵500<span class="text-xl text-gray-400">/month</span></div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>
+                            <span>All Monthly benefits</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>
+                            <span>Personal gaming locker</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>
+                            <span>Exclusive VIP events</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-5 h-5 mr-3 text-green-400"></i>
+                            <span>20% discount on everything</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/233245332299?text=I%20want%20to%20sign%20up%20for%20the%20VIP%20Plan%20at%20LANAB%20GAME%20STOP" 
+                       target="_blank"
+                       class="block w-full py-4 bg-gray-600 hover:bg-cyan-600 rounded-xl text-center font-bold transition-all">
+                        Go VIP
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 animate-fade-in-up">
+                <p class="text-gray-400 text-lg">No complicated terms. Just great gaming.</p>
             </div>
         </div>
     </section>
 
     <!-- Visit Section -->
-    <section id="visit" class="py-16 sm:py-20 bg-gray-900">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bebas mb-6 text-cyan-400">VISIT US</h2>
-                    <div class="space-y-4 sm:space-y-6">
+    <section id="visit" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl text-center text-cyan-400 mb-12 animate-fade-in-up">VISIT US</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="animate-fade-in-left">
+                    <div class="space-y-8">
                         <div class="flex items-start">
-                            <i data-feather="map-pin" class="w-5 h-5 mt-1 mr-3 text-cyan-400 flex-shrink-0"></i>
+                            <div class="bg-cyan-500 p-3 rounded-lg mr-4">
+                                <i data-feather="map-pin" class="w-6 h-6"></i>
+                            </div>
                             <div>
-                                <p class="font-bold text-lg">Location:</p>
-                                <p class="text-gray-300">First Floor (Top Floor), Above MB Chemical, Abor Junction, Ghana</p>
+                                <h4 class="font-bold text-xl mb-2">Location</h4>
+                                <p class="text-gray-300">First Floor (Top Floor), Above MB Chemical, Abor Junction, Abor, Volta Region</p>
                             </div>
                         </div>
+                        
                         <div class="flex items-start">
-                            <i data-feather="clock" class="w-5 h-5 mt-1 mr-3 text-cyan-400 flex-shrink-0"></i>
+                            <div class="bg-cyan-500 p-3 rounded-lg mr-4">
+                                <i data-feather="clock" class="w-6 h-6"></i>
+                            </div>
                             <div>
-                                <p class="font-bold text-lg">Opening Hours:</p>
+                                <h4 class="font-bold text-xl mb-2">Opening Hours</h4>
                                 <p class="text-gray-300">Monday - Friday: 10:00 AM - 10:00 PM</p>
                                 <p class="text-gray-300">Saturday - Sunday: 9:00 AM - 12:00 AM</p>
                                 <p class="text-sm text-cyan-300 mt-2">Extended hours for tournament weekends!</p>
                             </div>
                         </div>
+                        
                         <div class="flex items-start">
-                            <i data-feather="phone" class="w-5 h-5 mt-1 mr-3 text-cyan-400 flex-shrink-0"></i>
+                            <div class="bg-cyan-500 p-3 rounded-lg mr-4">
+                                <i data-feather="phone" class="w-6 h-6"></i>
+                            </div>
                             <div>
-                                <p class="font-bold text-lg">Call or WhatsApp:</p>
+                                <h4 class="font-bold text-xl mb-2">Contact Us</h4>
                                 <p class="text-gray-300">
                                     <a href="tel:+233534414615" class="hover:text-cyan-400 transition-colors">+233 53 441 4615</a>
                                 </p>
@@ -744,102 +590,114 @@
                                 </p>
                             </div>
                         </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-600 p-3 rounded-lg mr-4">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-2">WhatsApp Booking</h4>
+                                <a href="https://wa.me/233245332299" 
+                                   target="_blank" 
+                                   class="inline-flex items-center gap-3 px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl text-white font-bold transition-all transform hover:scale-105">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                    Book Your Session Now
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="h-64 sm:h-80 md:h-96 bg-gray-700 rounded-lg overflow-hidden">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.2875690829355!2d-0.8614579877665359!3d6.06477020654915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1021158717dd3825%3A0xfff985a767ac11e9!2sMB%20Chemical%20Shop!5e0!3m2!1sen!2sgh!4v1700000000000!5m2!1sen!2sgh" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="LANAB GAME STOP Location Map">
-                    </iframe>
+                
+                <div class="animate-fade-in-right">
+                    <div class="h-96 bg-gray-800 rounded-2xl overflow-hidden shadow-2xl">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.2875690829355!2d-0.8614579877665359!3d6.06477020654915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1021158717dd3825%3A0xfff985a767ac11e9!2sMB%20Chemical%20Shop!5e0!3m2!1sen!2sgh!4v1700000000000!5m2!1sen!2sgh" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen 
+                            loading="lazy"
+                            title="LANAB GAME STOP Location"
+                            class="rounded-2xl">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 sm:py-20 bg-gray-800">
-        <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bebas mb-8 sm:mb-12 text-center text-cyan-400">GET IN TOUCH</h2>
-            <div class="grid md:grid-cols-2 gap-8 sm:gap-12">
-                <div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">CONTACT INFO</h3>
-                    <div class="space-y-4 sm:space-y-6">
-                        <div class="flex items-center">
-                            <i data-feather="mail" class="w-5 h-5 mr-3 text-cyan-400 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-semibold">Email:</p>
-                                <a href="mailto:hello@lanabgamestop.com" class="text-gray-300 hover:text-cyan-400 transition-colors">hello@lanabgamestop.com</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i data-feather="phone" class="w-5 h-5 mr-3 text-cyan-400 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-semibold">Phone:</p>
-                                <div class="text-gray-300">
-                                    <a href="tel:+233534414615" class="hover:text-cyan-400 transition-colors block">+233 53 441 4615</a>
-                                    <a href="tel:+233245332299" class="hover:text-cyan-400 transition-colors block">+233 24 533 2299</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i data-feather="message-square" class="w-5 h-5 mr-3 text-cyan-400 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-semibold">WhatsApp:</p>
-                                <a href="https://wa.me/233245332299" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-cyan-400 transition-colors">+233 24 533 2299</a>
-                            </div>
-                        </div>
-                    </div>
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-4xl text-center text-cyan-400 mb-12 animate-fade-in-up">GET IN TOUCH</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="animate-fade-in-left">
+                    <h3 class="text-2xl mb-8">Contact Information</h3>
                     
-                    <div class="mt-8 sm:mt-12">
-                        <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">FOLLOW US</h3>
-                        <div class="social-links">
-                            <a href="https://instagram.com/lanabgamestop" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram">
-                                <i data-feather="instagram" class="w-5 h-5"></i>
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="font-bold text-xl mb-4">Phone Numbers</h4>
+                            <div class="space-y-3">
+                                <a href="tel:+233534414615" class="flex items-center gap-4 text-gray-300 hover:text-cyan-400 transition-colors p-3 bg-gray-700 rounded-xl">
+                                    <i data-feather="phone" class="w-5 h-5"></i>
+                                    <span class="text-lg">+233 53 441 4615</span>
+                                </a>
+                                <a href="tel:+233245332299" class="flex items-center gap-4 text-gray-300 hover:text-cyan-400 transition-colors p-3 bg-gray-700 rounded-xl">
+                                    <i data-feather="phone" class="w-5 h-5"></i>
+                                    <span class="text-lg">+233 24 533 2299</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-xl mb-4">Quick WhatsApp</h4>
+                            <p class="text-gray-300 mb-6">Click below to message us directly on WhatsApp:</p>
+                            <a href="https://wa.me/233245332299?text=Hello%20LANAB%20GAME%20STOP!%20I%20have%20a%20question..." 
+                               target="_blank"
+                               class="inline-flex items-center gap-4 px-8 py-4 bg-green-600 hover:bg-green-700 rounded-xl text-white font-bold transition-all transform hover:scale-105">
+                                <i class="fab fa-whatsapp text-2xl"></i>
+                                <span>Send WhatsApp Message</span>
                             </a>
-                            <a href="https://twitter.com/lanabgamestop" target="_blank" rel="noopener noreferrer" class="twitter" aria-label="Twitter">
-                                <i data-feather="twitter" class="w-5 h-5"></i>
-                            </a>
-                            <a href="https://facebook.com/lanabgamestop" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook">
-                                <i data-feather="facebook" class="w-5 h-5"></i>
-                            </a>
-                            <a href="https://youtube.com/@lanabgamestop" target="_blank" rel="noopener noreferrer" class="youtube" aria-label="YouTube">
-                                <i data-feather="youtube" class="w-5 h-5"></i>
-                            </a>
-                            <a href="https://tiktok.com/@lanabgamestop" target="_blank" rel="noopener noreferrer" class="tiktok" aria-label="TikTok">
-                                <i data-feather="video" class="w-5 h-5"></i>
-                            </a>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-xl mb-4">Follow Us</h4>
+                            <div class="flex gap-6">
+                                <a href="#" class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-cyan-500 transition-all transform hover:scale-110">
+                                    <i data-feather="facebook" class="w-6 h-6"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-cyan-500 transition-all transform hover:scale-110">
+                                    <i data-feather="instagram" class="w-6 h-6"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-cyan-500 transition-all transform hover:scale-110">
+                                    <i data-feather="twitter" class="w-6 h-6"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">SEND US A MESSAGE</h3>
-                    <form class="contact-form space-y-4 sm:space-y-6" id="contactForm">
+                <div class="animate-fade-in-right">
+                    <h3 class="text-2xl mb-8">Send Us a Message</h3>
+                    <form class="space-y-6" id="contactForm">
                         <div>
-                            <label for="name" class="block mb-2 text-sm font-medium">Your Name *</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg focus:outline-none" required>
+                            <label class="block mb-2 font-medium">Your Name</label>
+                            <input type="text" class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-xl focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all">
                         </div>
+                        
                         <div>
-                            <label for="email" class="block mb-2 text-sm font-medium">Email Address *</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg focus:outline-none" required>
+                            <label class="block mb-2 font-medium">Phone Number</label>
+                            <input type="tel" class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-xl focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all">
                         </div>
+                        
                         <div>
-                            <label for="phone" class="block mb-2 text-sm font-medium">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg focus:outline-none">
+                            <label class="block mb-2 font-medium">Message</label>
+                            <textarea rows="5" class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-xl focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all"></textarea>
                         </div>
-                        <div>
-                            <label for="message" class="block mb-2 text-sm font-medium">Message *</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg focus:outline-none" required></textarea>
-                        </div>
-                        <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg font-bold hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 flex items-center justify-center gap-2">
-                            <i data-feather="send" class="w-5 h-5"></i>
-                            <span>Send Message</span>
+                        
+                        <button type="submit" class="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl font-bold hover:shadow-xl hover:shadow-cyan-500/30 transition-all transform hover:scale-105">
+                            Send Message
                         </button>
                     </form>
                 </div>
@@ -847,251 +705,178 @@
         </div>
     </section>
 
-    <!-- Custom Footer -->
-    <div class="footer-container">
-        <div class="footer-content-container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="flex items-center gap-3 mb-4">
-                        <img src="images/lanab-logo.png" alt="LANAB GAME STOP Logo" class="h-10 w-auto rounded">
-                        <h3 class="text-xl">LANAB GAME STOP</h3>
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="animate-fade-in-up">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="lanab-logo.png" alt="LANAB Logo" class="h-12 rounded">
+                        <h3 class="text-2xl font-bold text-cyan-400">LANAB GAME STOP</h3>
                     </div>
-                    <p class="text-gray-400 mb-4">Where gamers are made. Step in, lock in, dominate.</p>
-                    <div class="social-links">
-                        <a href="https://instagram.com/lanabgamestop" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram">
-                            <i data-feather="instagram" class="w-5 h-5"></i>
-                        </a>
-                        <a href="https://twitter.com/lanabgamestop" target="_blank" rel="noopener noreferrer" class="twitter" aria-label="Twitter">
-                            <i data-feather="twitter" class="w-5 h-5"></i>
-                        </a>
-                        <a href="https://facebook.com/lanabgamestop" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook">
-                            <i data-feather="facebook" class="w-5 h-5"></i>
-                        </a>
-                        <a href="https://youtube.com/@lanabgamestop" target="_blank" rel="noopener noreferrer" class="youtube" aria-label="YouTube">
-                            <i data-feather="youtube" class="w-5 h-5"></i>
-                        </a>
-                        <a href="https://tiktok.com/@lanabgamestop" target="_blank" rel="noopener noreferrer" class="tiktok" aria-label="TikTok">
-                            <i data-feather="video" class="w-5 h-5"></i>
-                        </a>
-                    </div>
+                    <p class="text-gray-400">Abor's premier gaming destination. Where gamers are made.</p>
                 </div>
                 
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#games">Games & Experiences</a></li>
-                        <li><a href="membership.html">Membership</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#tiktok-feed">TikTok Feed</a></li>
-                        <li><a href="#visit">Visit Us</a></li>
+                <div class="animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-cyan-400 transition-colors">Home</a></li>
+                        <li><a href="#games" class="text-gray-400 hover:text-cyan-400 transition-colors">Games</a></li>
+                        <li><a href="#membership" class="text-gray-400 hover:text-cyan-400 transition-colors">Membership</a></li>
+                        <li><a href="#visit" class="text-gray-400 hover:text-cyan-400 transition-colors">Visit Us</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li>First Floor, Above MB Chemical</li>
-                        <li>Abor Junction, Ghana</li>
-                        <li><a href="mailto:hello@lanabgamestop.com">hello@lanabgamestop.com</a></li>
-                        <li><a href="tel:+233534414615">+233 53 441 4615</a></li>
-                        <li><a href="tel:+233245332299">+233 24 533 2299</a></li>
+                <div class="animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <h4 class="text-xl font-bold mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="text-gray-400">Above MB Chemical, Abor</li>
+                        <li><a href="tel:+233534414615" class="text-gray-400 hover:text-cyan-400 transition-colors">+233 53 441 4615</a></li>
+                        <li><a href="tel:+233245332299" class="text-gray-400 hover:text-cyan-400 transition-colors">+233 24 533 2299</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h3>Opening Hours</h3>
-                    <ul>
+                <div class="animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <h4 class="text-xl font-bold mb-6">Hours</h4>
+                    <ul class="space-y-3 text-gray-400">
                         <li>Mon-Fri: 10AM - 10PM</li>
                         <li>Sat-Sun: 9AM - 12AM</li>
-                        <li class="text-cyan-300 text-sm mt-2">Tournament hours may vary</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> LANAB GAME STOP. All rights reserved.</p>
-                <p class="mt-2 text-gray-500 text-sm">Designed for the gaming community of Ghana</p>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 animate-fade-in-up">
+                <p>&copy; 2024 LANAB GAME STOP. All rights reserved.</p>
+                <p class="mt-2">Abor Junction, Volta Region, Ghana</p>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script>
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set current year in footer
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
-            
-            // Initialize feather icons
+        // Initialize feather icons
+        feather.replace();
+        
+        // Remove loader after page loads
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 500);
+        });
+        
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
             feather.replace();
-            
-            // Mobile menu toggle
-            const menuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('active');
-                    feather.replace();
-                });
-                
-                // Close mobile menu when clicking a link
-                const mobileLinks = mobileMenu.querySelectorAll('.nav-link');
-                mobileLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.remove('active');
-                    });
-                });
-            }
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    if (this.getAttribute('href') === '#') return;
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        e.preventDefault();
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                        
-                        // Update URL hash without scrolling
-                        history.pushState(null, null, targetId);
-                    }
-                });
+        });
+        
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
             });
-            
-            // Contact form submission
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Get form data
-                    const formData = new FormData(this);
-                    const data = Object.fromEntries(formData);
-                    
-                    // In a real implementation, you would send this to a server
-                    // For now, we'll just show an alert and reset the form
-                    
-                    // Show success message
-                    alert('Thank you for your message! We will get back to you soon.');
-                    
-                    // Reset form
-                    this.reset();
-                    
-                    // You can implement actual form submission here:
-                    // Example using fetch:
-                    /*
-                    fetch('/contact', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(data)
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        alert('Thank you for your message! We will get back to you soon.');
-                        contactForm.reset();
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('Sorry, there was an error sending your message. Please try again.');
-                    });
-                    */
-                });
-            }
-            
-            // Intersection Observer for scroll animations
-            const animateOnScroll = () => {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('fade-in');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                });
-
-                // Observe elements with fade-in class
-                document.querySelectorAll('.fade-in').forEach(el => {
-                    if (!el.classList.contains('fade-in-done')) {
-                        observer.observe(el);
-                    }
-                });
-            };
-
-            // Initialize scroll animations
-            animateOnScroll();
-            
-            // Add hover effect to membership cards
-            const membershipCards = document.querySelectorAll('.membership-card');
-            membershipCards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.classList.add('glow-box');
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.classList.remove('glow-box');
-                });
-            });
-            
-            // Update navigation active state on scroll
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-            
-            const updateActiveNavLink = () => {
-                let current = '';
-                const scrollPosition = window.scrollY + 100;
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
                 
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            };
-            
-            window.addEventListener('scroll', updateActiveNavLink);
-            
-            // Handle hash on page load
-            if (window.location.hash) {
-                const targetElement = document.querySelector(window.location.hash);
+                const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    setTimeout(() => {
-                        targetElement.scrollIntoView();
-                    }, 100);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without page reload
+                    history.pushState(null, null, targetId);
                 }
+            });
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
             }
         });
         
-        // Re-run animations when navigating back
-        window.addEventListener('pageshow', (event) => {
-            if (event.persisted) {
-                feather.replace();
-                animateOnScroll();
+        // Section animation on scroll
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Animate cards within section
+                    const cards = entry.target.querySelectorAll('.card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('active');
+                        }, index * 200);
+                    });
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show success message
+                alert('Thank you for your message! We will get back to you soon via WhatsApp or phone.');
+                
+                // Reset form
+                this.reset();
+            });
+        }
+        
+        // WhatsApp booking functionality
+        const bookingButtons = document.querySelectorAll('a[href*="wa.me"]');
+        bookingButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Add animation on click
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+        
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('#home');
+            if (hero) {
+                hero.style.backgroundPosition = `center ${scrolled * 0.5}px`;
             }
         });
         
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            feather.replace();
+        // Add hover effect to all interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .card');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s ease';
+            });
         });
     </script>
 </body>
